@@ -1,4 +1,4 @@
-# 🔥 Self-Pruning Neural Network (PyTorch)
+# Self-Pruning Neural Network (PyTorch)
 
 This project implements a neural network that **learns to prune its own weights during training** using learnable gates and L1 regularization.
 
@@ -6,7 +6,7 @@ Instead of pruning after training, the model dynamically identifies and removes 
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Traditional neural network pruning is typically applied after training. In this project, pruning is integrated directly into the training process.
 
@@ -16,7 +16,7 @@ Connections with gate values close to zero become effectively inactive, allowing
 
 ---
 
-## 🚀 Key Idea
+## Key Idea
 
 Each weight is controlled by a learnable gate:
 
@@ -25,7 +25,7 @@ $effective\ weight = weight \times \sigma(gate\ score)$
 * If gate → 0 → weight is pruned
 * If gate → 1 → weight remains active
 ---
-## ⚙️ How It Works
+## How It Works
 
 ### 1. Prunable Layer
 
@@ -87,7 +87,7 @@ Loss = CE + λ × SparsityLoss
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 self-pruning-neural-network/
@@ -124,7 +124,7 @@ python self_pruning_model.py
 ```
 ---
 
-## 🎯 Key Takeaways
+## Key Takeaways
 
 * Neural networks contain many redundant parameters
 * L1-regularized gates can enable **dynamic pruning**
@@ -133,7 +133,7 @@ python self_pruning_model.py
   
 ---
 
-## 📌 Author
+##  Author
 **Samyak Rawat**  
 
 This project was developed as part of an assignment for **Tredence Analytics**.  
