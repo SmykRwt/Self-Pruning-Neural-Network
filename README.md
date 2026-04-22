@@ -124,7 +124,7 @@ The model is trained on the **CIFAR-10 dataset**, which contains:
 
 ---
 
-## 📊 Gate Value Distribution
+## 📊 Gate Value Distribution (for best model , λ=20) 
 
 ![Gate Distribution](gate_distribution.png)
 
