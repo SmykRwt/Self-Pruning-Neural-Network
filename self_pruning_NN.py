@@ -237,16 +237,6 @@ def plot_gate_distribution(model, filename="gate_distribution.png"):
 
 plot_gate_distribution(model)   # use BEST model (λ=20)
 
-"""## Gate Value Distribution
-
-The histogram of gate values for the best model shows:
-
-* A large spike at 0 → indicating many pruned connections.
-* A smaller cluster near 1 → representing important active connections.
-
-This bimodal distribution confirms that the network successfully learned to prune itself.**bold text**
-"""
-
 def plot_accuracy_vs_sparsity(results):
     sparsity = [r[2] for r in results]
     accuracy = [r[1] for r in results]
