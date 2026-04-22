@@ -1,4 +1,4 @@
-# Self-Pruning Neural Network (PyTorch)
+# Self-Pruning Neural Network
 
 This project implements a neural network that **learns to prune its own weights during training** using learnable gates and L1 regularization.
 
@@ -13,6 +13,8 @@ Traditional neural network pruning is typically applied after training. In this 
 Each weight is associated with a learnable gate parameter. During the forward pass, gate values are computed using a sigmoid function and multiplied element-wise with the weights.
 
 Connections with gate values close to zero become effectively inactive, allowing the model to automatically learn a sparse architecture during training.
+
+The model is trained and evaluated on the **CIFAR-10 dataset**, a standard benchmark for image classification consisting of 60,000 32×32 color images across 10 classes.
 
 ---
 
@@ -50,6 +52,15 @@ Loss = CE + λ × SparsityLoss
 * Learning rate scheduling
 * Warmup phase (no sparsity initially)
 * Gradient clipping for stability
+
+---
+
+## Dataset
+
+The model is trained on the **CIFAR-10 dataset**, which contains:
+- 60,000 images (50,000 train + 10,000 test)
+- 10 object classes
+- 32×32 RGB images
 
 ---
 
