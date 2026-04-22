@@ -22,7 +22,9 @@ The model is trained and evaluated on the **CIFAR-10 dataset**, a standard bench
 
 Each weight is controlled by a learnable gate:
 
-$effective\ weight = weight \times \sigma(gate\ score)$
+$$
+\text{effective weight} = \text{weight} \times \sigma(\text{gate score})
+$$
 
 * If gate → 0 → weight is pruned
 * If gate → 1 → weight remains active
@@ -50,11 +52,47 @@ Loss = CE + λ × SparsityLoss
 
 * Optimizer: Adam
 * Learning rate scheduling
-* Warmup phase (no sparsity initially)
 * Gradient clipping for stability
 
 ---
 
+## Tech Stack
+
+* Python
+* PyTorch
+* Torchvision
+* NumPy
+* Matplotlib
+
+---
+
+## Project Structure
+
+```text
+self-pruning-neural-network/
+│
+├── self_pruning_model.py   # Full implementation
+├── report.md               # Detailed explanation
+├── gate_distribution.png   # Plot
+├── README.md               # Project overview
+```
+
+---
+
+## ⚙️ Installation
+
+```bash
+pip install torch torchvision matplotlib
+```
+
+---
+
+## ▶️ Run the Project
+
+```bash
+python self_pruning_model.py
+```
+---
 ## Dataset
 
 The model is trained on the **CIFAR-10 dataset**, which contains:
@@ -80,7 +118,6 @@ The model is trained on the **CIFAR-10 dataset**, which contains:
 
 * Increasing λ increases sparsity
 * Accuracy remains stable up to moderate sparsity
-* At high sparsity (>70%), accuracy drops gradually
 * Model retains strong performance even at ~85% sparsity
 
 👉 This shows neural networks are **highly overparameterized**
@@ -98,41 +135,7 @@ The model is trained on the **CIFAR-10 dataset**, which contains:
 
 ---
 
-## Project Structure
 
-```text
-self-pruning-neural-network/
-│
-├── self_pruning_model.py   # Full implementation
-├── report.md               # Detailed explanation
-├── gate_distribution.png   # Plot
-├── README.md               # Project overview
-```
-
----
-
-## ⚙️ Installation
-
-```bash
-pip install torch torchvision matplotlib
-```
----
-
-## Tech Stack
-
-* Python
-* PyTorch
-* Torchvision
-* NumPy
-* Matplotlib
-
----
-
-## ▶️ Run the Project
-
-```bash
-python self_pruning_model.py
-```
 ---
 
 ## Key Takeaways
