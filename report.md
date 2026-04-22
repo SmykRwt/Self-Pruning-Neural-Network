@@ -42,7 +42,7 @@ where:
 
 ---
 
-## 🔹Gate Value Distribution
+## 🔹Gate Value Distribution (for best model , λ=20)
 
 ![Gate Distribution](gate_distribution.png)
 
